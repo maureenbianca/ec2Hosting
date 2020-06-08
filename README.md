@@ -2,7 +2,9 @@
 
 ## Overview
 
-When deciding on how to host a website that will have to a database in the long-run can be tough. AWS offers a range of  services to help you in decision making to meet your needs. Amazon EC2 (Elastic Compute Cloud) is one of most well-known services, which offers businesses the ability to run applications on the public cloud. Developers can create instances of virtual machines and easily configure the capacity scaling of instances using the AWS console or command line interface i.e _aws-cli_.  Launching an EC2 server is like going to the store to buy a laptop to run your applications which you can access at your own convenience.
+When deciding on how to host a website that will have to a database in the long-run can be tough. AWS offers a range of  services to help you in decision making to meet your needs. Amazon EC2 (Elastic Compute Cloud) is one of most well-known services, which offers businesses the ability to run applications on the public cloud.
+
+Developers can create instances of virtual machines and easily configure the capacity scaling of instances using the AWS console or command line interface i.e _aws-cli_.  Launching an EC2 server is like going to the store to buy a laptop to run your applications which you can access at your own convenience.
 
 ## Prerequisites
 
@@ -32,7 +34,8 @@ Navigate to your terminal and do the following:
 	$ chmod 400 <your keypair.pem>
 	$ ssh -i "your_keypair.pem" ec2-user@ec2-user@<public_ip_from_dashboard>
 
-Copy code from local to ec2 location on the server
+Copy code from local to ec2 location on the server:
+
 	$ scp -i /path/to/keypair/ /file/to/copy/ ec2-user@<public_ip_from_dashboard>:/home/ec2-user/
 
 Type yes to continue
@@ -46,12 +49,12 @@ Update all of the packages on the instance:
 	$ yum update -y 
 
 ### Step 2: Install webserver (Apache2)
+
 	$ yum install httpd -y
 	$ service httpd start
 	$ chkconfig httpd on
 
-By default, the apache web server will display the index.html file found in _/var/www/html_ directory in the root path of your website.
-Navigate to the directory
+By default, the apache web server will display the _index.html_ file found in _/var/www/html_ directory in the root path of your website then navigate to the directory
 
 	$ cd /var/www/html 
 
@@ -78,10 +81,10 @@ Add valid html to the file (e.g.):
 
 	```
 Exit and save. Check the contents of index.html file:
+
 	$ cat index.html 
 
-Navigate back to AWS console copy the Public DNS(IPV4) of your instance into your clipboard. Paste the address into your browser.
-You should be able to see your homepage with 'Hello World' displayed!
+Navigate back to AWS console copy the Public DNS(IPV4) of your instance into your clipboard. Paste the address into your browser. You should be able to see your homepage with 'Hello World' displayed!
 
 ## What's Next
 The above guidelines will help you deploy your first website with ease! You can learn more [here](https://aws.amazon.com/ec2/getting-started/) 
