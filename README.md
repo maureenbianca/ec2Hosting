@@ -13,6 +13,7 @@ When deciding on how to host a website that will have to a database in the long-
 ## Launch EC2 instance 
 
 Sign in to the AWS console and search for “EC2”. Navigate to the EC2 dashboard and click “Launch Instance”. Do the following:
+
 	- Choose a free-tier eligible Linux option (Amazon Linux AMI, SSD Volume Type) and click “Select”
 	- Choose the option marked as free tier eligible (General Purpose — t2.micro) - it will be one of the smallest, least powerful options. Click next to configure instance details.
 	- Accept default options to configure instance. 
